@@ -16,6 +16,7 @@ public class SampleCreator {
             sample.add(new Sample(image, keyPoints));
         }
 
+        /*
         for (int i = 0; i < sample.size(); i++) {
             try {
                 File saveFile = new File("lena" + i + ".jpg");
@@ -24,6 +25,7 @@ public class SampleCreator {
                 e.printStackTrace();
             }
         }
+        */
         return sample;
     }
 
@@ -92,7 +94,7 @@ public class SampleCreator {
          return attributes;          
          }
          */
-        /////////////////////////////FIX!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         int[] getAttributes(BufferedImage img, KeyPoint p, int keyPointID) {
             int size = features.size() + 1;
             int[] result = new int[size];
@@ -112,7 +114,6 @@ public class SampleCreator {
 
                 int rbx = (int) Math.round(bx * cos - by * sin + p.x - p.x * cos + p.y * sin);
                 int rby = (int) Math.round(bx * sin + by * cos + p.y - p.x * sin - p.y * cos);
-
 
                 //System.out.println(ax+" "+ay+" --- "+rax+" "+ray);
                 //System.out.println(bx+" "+by+" --- "+rbx+" "+rby);
